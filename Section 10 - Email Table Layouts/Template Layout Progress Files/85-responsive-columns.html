@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Responsive HTML Email Columns</title>
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+    <style type="text/css">
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 0;
+      }
+      p {
+        font-size: 16px;
+      }
+      img {
+        border: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #3d3d3d;
+        font-size: 16px;
+      }
+      .content {
+        line-height: 20px;
+        font-size: 16px;
+      }
+
+      u + .body .gmail-blend-screen {
+        background: #000;
+        mix-blend-mode: screen;
+      }
+      u + .body .gmail-blend-difference {
+        background: #000;
+        mix-blend-mode: difference;
+      }
+
+      .ExternalClass {
+        width: 100%;
+      }
+
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      a[x-apple-data-detectors='true'] {
+        color: inherit !important;
+        text-decoration: inherit !important;
+      }
+
+      /* Inline Classes for Reference */
+      /* <!-- --------------------------- Simple 2 Colums --------------------------- --> */
+      .column-wrapper {
+        padding: 0;
+        font-size: 0;
+        background-color: #b7c0ba;
+        text-align: center;
+      }
+
+      .column {
+        border-spacing: 0;
+        vertical-align: top;
+        width: 100%;
+        display: inline-block;
+        background-color: #546c94;
+        color: #fff;
+      }
+
+      .column-one-half {
+        max-width: 300px;
+      }
+
+      .padding {
+        padding: 20px;
+        background-color: #346565;
+      }
+
+      /* <!-- ------------------------------- Thirds -------------------------------- --> */
+      .column-one-third {
+        max-width: 200px;
+      }
+      .column-two-third {
+        max-width: 400px;
+      }
+
+      /* <!-- ---------------------------- Media Queries ---------------------------- --> */
+      @media screen and (max-width: 599.98px) {
+        .column-wrapper {
+          padding: 15px 0 !important;
+        }
+        .padding {
+          padding: 5px 20px 0 !important;
+        }
+
+        /********* We need to select also the image to change the width *********/
+        .column-wrapper.fluid-hybrid .column,
+        .column-wrapper.fluid-hybrid .column img {
+          max-width: 100% !important;
+          /********* width also needed *********/
+          width: 100% !important;
+        }
+        .column-wrapper.fluid-hybrid {
+          padding: 15px 30px !important;
+        }
+      }
+      @media screen and (max-width: 399.98px) {
+        .column-wrapper.fluid-hybrid {
+          padding: 0 !important;
+        }
+        .column-wrapper.fluid-hybrid .padding {
+          padding-top: 20px !important;
+          padding-bottom: 0 !important;
+        }
+        .column-wrapper.fluid-hybrid .padding.second {
+          padding-top: 0 !important;
+          padding-bottom: 15px !important;
+        }
+      }
+      /*
+      :root {
+         color-scheme: light dark;
+         supported-color-schemes: light dark;
+      }
+
+      @media (prefers-color-scheme: dark) {
+         body, table {
+            background: #2d2d2d !important;
+            color: #ffffff !important;
+         }
+         [data-ogsc] body, table {
+            background: #2d2d2d !important;
+            color: #ffffff !important;
+         }
+         .column-title {
+            color: #3d3d3d!important;
+         }
+         [data-ogsc] .column-title {
+            color: #3d3d3d!important;
+         }
+      } */
+    </style>
+
+    <!-- Ghost Table for Outlookm -->
+    <!-- To ensure that multi-column layouts appear correctly in Outlook -->
+    <!--[if mso]>
+      <style type="text/css">
+        body {
+          background-color: #dde0e1 !important;
+        }
+        body,
+        table,
+        td,
+        p,
+        a {
+          font-family: Arial, Helvetica, sans-serif !important;
+        }
+        table {
+          border-spacing: 0 !important;
+          border-collapse: collapse !important;
+        }
+      </style>
+    <![endif]-->
+  </head>
+  <body class="body" xml:lang="en" style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1">
+    <div style="width: 100%; table-layout: fixed; background-color: #dde0e1; color: #3d3d3d; font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin: 0 auto 40px">
+      <div style="max-width: 600px; background-color: #fafdfe; color: #3d3d3d; font-family: Arial, Helvetica, sans-serif; font-size: 16px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin: 0 auto">
+        <div style="font-size: 0px; color: #fafdfe; mso-line-height-rule: exactly; line-height: 0px; display: none; max-width: 0px; max-height: 0px; opacity: 0; overflow: hidden; mso-hide: all">
+          This is our preheader text which can be 35-190 characters but 85-100 is recommended.
+          &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
+        </div>
+
+        <!--[if mso]>
+          <table width="600" align="center" style="border-spacing: 0; border-collapse:collapse; color: #3d3d3d;" role="presentation">
+          <tr>
+          <td style="padding:0;">
+         <![endif]-->
+
+        <table align="center" style="border-spacing: 0; border-collapse: collapse; color: #3d3d3d; font-family: Arial, Helvetica, sans-serif; font-size: 16px; background-color: #fafdfe; margin: 0 auto; padding: 0; width: 100%; max-width: 600px" role="presentation">
+          <!--? ----------------------------------------------------------------------- -->
+          <!--?                           1) Simple 2 Columns                           -->
+          <!--? ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 10px 0 10px">
+              <!--! font-size: 0; Can go in here as well -->
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <!--? -------------------------------- Title -------------------------------- -->
+                <tr>
+                  <td style="background-color: #f3e1dc; padding: 12px">
+                    <p style="text-align: center; font-size: 22px; margin: 0">1) Simple Two Columns</p>
+                  </td>
+                </tr>
+
+                <!--? ------------------------------- Content ------------------------------- -->
+                <tr>
+                  <!--! font-size: 0; In order to make tables display inline, like flexbox -->
+                  <td class="column-wrapper" style="padding: 0; font-size: 0; background-color: #b7c0ba; text-align: center">
+                    <!--? ------------------------------ Column 1 ------------------------------- -->
+                    <!--! Still need: display: inline-block; -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: top; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px; background-color: #346565">
+                          <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="260" alt="Image Description" /></a>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--? ------------------------------ Column 2 ------------------------------- -->
+                    <!--! We use inline-block so the width is respected at 300px -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: top; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px; background-color: #346565">
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!--? ----------------------------------------------------------------------- -->
+          <!--?                      2) Simple 2 Columns Reversed                       -->
+          <!--? ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 10px 0 10px">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <!--? -------------------------------- Title -------------------------------- -->
+                <tr>
+                  <td style="background-color: #f3e1dc; padding: 12px">
+                    <p style="text-align: center; font-size: 22px; margin: 0">2) Two Columns Reverse Direction, Vertical Align Middle</p>
+                  </td>
+                </tr>
+
+                <!--? ------------------------------- Content ------------------------------- -->
+                <tr>
+                  <!--! direction="right-to-left" -->
+                  <td class="column-wrapper" style="padding: 0; font-size: 0; background-color: #b7c0ba; text-align: center" dir="rtl">
+                    <!--? ------------------------------ Column 1 ------------------------------- -->
+                    <!--! We do need to use: vertical-align: middle; as well so the second one works -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px; background-color: #346565">
+                          <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="260" alt="Image Description" /></a>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--? ------------------------------ Column 2 ------------------------------- -->
+                    <!--! dir="ltr" In order to maintain point on his spot -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation" dir="ltr">
+                      <tr>
+                        <td class="padding" style="padding: 20px; background-color: #346565">
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!--? ----------------------------------------------------------------------- -->
+          <!--?             3) 2 Columns Fluid/Hybrid 100% Responsive Width             -->
+          <!--? ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 10px 0 10px">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <!--? -------------------------------- Title -------------------------------- -->
+                <tr>
+                  <td style="background-color: #f3e1dc; padding: 12px">
+                    <p style="text-align: center; font-size: 22px; margin: 0">3) Two Columns Fluid/Hybrid 100% Responsive Width</p>
+                  </td>
+                </tr>
+
+                <!--? ------------------------------- Content ------------------------------- -->
+                <tr>
+                  <td class="column-wrapper fluid-hybrid" style="padding: 0; font-size: 0; background-color: #b7c0ba; text-align: center">
+                    <!--? ------------------------------ Column 1 ------------------------------- -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: top; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px; background-color: #346565">
+                          <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="260" alt="Image Description" /></a>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--? ------------------------------ Column 2 ------------------------------- -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: top; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding second" style="padding: 20px; background-color: #346565">
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!--? ----------------------------------------------------------------------- -->
+          <!--?          4) 2 Columns Fluid/Hybrid 100% Responsive Width + MSO          -->
+          <!--? ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 10px 0 10px">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <tr>
+                  <td style="background-color: #f3e1dc; padding: 12px">
+                    <p style="text-align: center; font-size: 22px; margin: 0">4) Fluid/Hybrid 100% with MSO Outlook Statements</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="column-wrapper fluid-hybrid" style="padding: 0; font-size: 0; background-color: #b7c0ba; text-align: center">
+                    <!--! valign="middle" -->
+                    <!--[if mso]>
+                      <table width="100%" style="border-spacing: 0;" role="presentation">
+                      <tr>
+                      <td width="300" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px; background-color: #346565">
+                          <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="260" alt="Image Description" /></a>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--! Add a placeholder for the second column, does noot need to be a table -->
+                    <!--[if mso]>
+                      </td>
+                      <td width="300" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <!--! text: align-center; here for outlook -->
+                        <td class="padding second" style="padding: 20px; background-color: #346565; text-align: center">
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]>
+                      </td>
+                      </tr>
+                      </table>
+                    <![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!--? ----------------------------------------------------------------------- -->
+          <!--?     5) 2 Columns Fluid/Hybrid 100% Responsive Width + MSO Reversed      -->
+          <!--? ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 10px 0 10px">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <tr>
+                  <td style="background-color: #f3e1dc; padding: 12px">
+                    <p style="text-align: center; font-size: 22px; margin: 0">5) Fluid/Hybrid 100% - MSO Outlook Statements Reversed</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="column-wrapper fluid-hybrid" style="padding: 0; font-size: 0; background-color: #b7c0ba; text-align: center" dir="rtl">
+                    <!--[if mso]>
+                      <table width="100%" style="border-spacing: 0;" role="presentation">
+                      <tr>
+                      <td width="300" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px; background-color: #346565">
+                          <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="260" alt="Image Description" /></a>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]>
+                      </td><td width="300" valign="middle" style="padding: 0;" dir="ltr">
+                    <![endif]-->
+
+                    <!--! dir="ltr" Does work in Outlook, we can change the direction only in Outlook -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation" dir="ltr">
+                      <tr>
+                        <td class="padding second" style="padding: 20px; background-color: #346565; text-align: center">
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]>
+                      </td>
+                      </tr>
+                      </table>
+                    <![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!--? ----------------------------------------------------------------------- -->
+          <!--?             6) Showing and Hiding Outlook Content With MSO              -->
+          <!--? ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 10px 0 10px">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <tr>
+                  <td style="background-color: #f3e1dc; padding: 12px">
+                    <p style="text-align: center; font-size: 22px; margin: 0">6) Showing / Hiding Content with MSO Outlook Statements</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="column-wrapper fluid-hybrid" style="padding: 0; font-size: 0; background-color: #b7c0ba; text-align: center">
+                    <!--[if mso]>
+                      <table width="100%" style="border-spacing: 0;" role="presentation">
+                      <tr>
+                      <td width="300" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px; background-color: #346565">
+                          <a href="https://example.com" style="mso-hide: all"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="260" alt="Image Description" /></a>
+                          <!--! mso-hide: all; Here just for adding a different image in Outlook -->
+                          <!--[if mso]>
+                            <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/3c61e337-eda9-c62d-ce8d-0074bfafe769.png" width="260" alt="Image Description" /></a>
+                          <![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]>
+                      </td><td width="300" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding second" style="padding: 20px; background-color: #346565; text-align: center">
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                          <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]>
+                      </td>
+                      </tr>
+                      </table>
+                    <![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!--? ----------------------------------------------------------------------- -->
+          <!--?     7) 2 Columns F/H 100% Responsive Width + MSO + Rows Content Row     -->
+          <!--? ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 10px 0 10px">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <!--? -------------------------------- Title -------------------------------- -->
+                <tr>
+                  <td style="background-color: #f3e1dc; padding: 12px">
+                    <p style="text-align: center; font-size: 22px; margin: 0">*** 7) Fluid/Hybrid 100% Responsive Width with MSO Outlook Statements & Content Rows ***</p>
+                  </td>
+                </tr>
+
+                <!--? ------------------------------- Content ------------------------------- -->
+                <tr>
+                  <td class="column-wrapper fluid-hybrid" style="padding: 0; font-size: 0; background-color: #b7c0ba; text-align: center">
+                    <!--[if mso]>
+                      <table width="100%" style="border-spacing: 0;" role="presentation">
+                      <tr>
+                      <td width="300" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <!--? ------------------------------ Column 1 ------------------------------- -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px">
+                          <!--! Is not mandatory to add another set of table tags, it's cleaner to do so -->
+                          <table class="content" style="border-spacing: 0; text-align: center; color: #fff" role="presentation">
+                            <!--? --------------------------------- Top --------------------------------- -->
+                            <!--! So in order to have those <tr> we will need the table tag -->
+                            <tr>
+                              <td style="padding: 10px 0 5px 0; background-color: #346565">
+                                <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="260" alt="Image Description" /></a>
+                              </td>
+                            </tr>
+
+                            <!--? --------------------------------- Bot --------------------------------- -->
+                            <tr>
+                              <td style="padding: 5px 0 10px 0; background-color: #346565">
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]>
+                      </td><td width="300" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <!--? ------------------------------ Column 2 ------------------------------- -->
+                    <table class="column column-one-half" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 300px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px">
+                          <table class="content" style="border-spacing: 0; text-align: center; color: #fff" role="presentation">
+                            <!--? --------------------------------- Top --------------------------------- -->
+                            <tr>
+                              <td style="padding: 10px 0 5px 0; background-color: #346565">
+                                <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="260" alt="Image Description" /></a>
+                              </td>
+                            </tr>
+
+                            <!--? --------------------------------- Bot --------------------------------- -->
+                            <tr>
+                              <td style="padding: 5px 0 10px 0; background-color: #346565">
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]>
+                      </td>
+                      </tr>
+                      </table>
+                    <![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                     8) 1 & 2 Thirds Columns Example                     -->
+          <!-- ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 10px 0 10px">
+              <table width="100%" tyle="border-spacing: 0" role="presentation">
+                <!--? -------------------------------- Title -------------------------------- -->
+                <tr>
+                  <td style="background-color: #f3e1dc; padding: 12px">
+                    <p style="text-align: center; font-size: 22px; margin: 0">8) One & Two-Thirds Columns Example</p>
+                  </td>
+                </tr>
+
+                <!--? ------------------------------- Content ------------------------------- -->
+                <tr>
+                  <td class="column-wrapper fluid-hybrid" style="padding: 0; font-size: 0; background-color: #b7c0ba; text-align: center">
+                    <!--[if mso]>
+                      <table width="100%" style="border-spacing: 0;" role="presentation">
+                      <tr>
+                      <td width="200" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <!--? ------------------------------ Column 1 ------------------------------- -->
+                    <!--! Width changed -->
+                    <table class="column column-two-third" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 200px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 10px">
+                          <table class="content" style="border-spacing: 0; text-align: center; color: #fff" role="presentation">
+                            <tr>
+                              <td style="padding: 10px 0 5px 0; background-color: #346565">
+                                <!--! We also needed to change Image width -->
+                                <a href="https://example.com"><img src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg" width="180" alt="Image Description" /></a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0px 0 10px 0; background-color: #346565">
+                                <p style="font-size: 16px">Responsive HTML Email Templates</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--! Width changed  -->
+                    <!--[if mso]>
+                      </td><td width="400" valign="middle" style="padding: 0;">
+                    <![endif]-->
+
+                    <!--? ------------------------------ Column 2 ------------------------------- -->
+                    <table class="column column-one-third" width="100%" style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 400px; display: inline-block; background-color: #546c94; color: #fff" role="presentation">
+                      <tr>
+                        <td class="padding" style="padding: 20px">
+                          <table class="content" style="border-spacing: 0; text-align: center; color: #fff" role="presentation">
+                            <tr>
+                              <td style="padding: 5px 0 10px 0; background-color: #346565">
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                                <p style="font-size: 16px">Responsive HTML Email Templates that you can build around to master email development.</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]>
+                      </td>
+                      </tr>
+                      </table>
+                    <![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+         <![endif]-->
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+Boat Image:
+https://i.ibb.co/C0ckzW1/boat.jpg
+https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a63a4362-8abd-b993-d894-ab788fdc56b8.jpg
+https://raw.githubusercontent.com/w3newbie/html-email-mastery-images/main/layouts-and-elements/boat.jpg
+
+Computer Image:
+https://i.ibb.co/RD0sR6V/computer.png
+https://mcusercontent.com/474f5b70c3b324277323d4c42/images/3c61e337-eda9-c62d-ce8d-0074bfafe769.png
+https://raw.githubusercontent.com/w3newbie/html-email-mastery-images/main/layouts-and-elements/computer.png
+-->

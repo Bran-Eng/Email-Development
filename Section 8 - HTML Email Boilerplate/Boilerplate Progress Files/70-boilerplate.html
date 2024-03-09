@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!-- Declares the XML namespace for Vector Markup Language, which is used by Microsoft Outlook for rendering vector graphics in emails -->
+
+<!-- Declares the XML namespace for Office-specific elements, often used in conjunction with VML for better Outlook compatibility -->
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <!-- Essential for defining the document's MIME type and character set, ensuring correct rendering of characters and symbols. -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Ensures latest rendering engine in Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Sets viewport ensuring that your email layout adapts to different screen sizes, particularly on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+
+    <!-- Disables automatic detection and styling of potential phone numbers, dates, etc. -->
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no" />
+
+    <!-- Prevents Apple Mail from resizing or reformatting the email -->
+    <meta name="x-apple-disable-message-reformatting" />
+
+    <!-- Declares support for light and dark color schemes -->
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+
+    <!-- In case of needing a live version of the template -->
+    <title>HTML Email Template Boilerplate</title>
+
+    <!--? Address rendering issues that are common in Outlook clients due to their unique rendering engines. -->
+    <!--? Outlook DPI Scaling Fix -->
+    <!--? 1 -->
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+
+    <!--? 2 -->
+    <!-- The following block of code is a conditional comment specifically for Microsoft Outlook. 
+     Outlook, particularly versions using Microsoft Word as a rendering engine, 
+     sometimes renders emails based on the system's DPI setting. This can cause 
+     emails to appear zoomed in or distorted, especially if the system DPI setting 
+     is higher than the standard 96 DPI. -->
+
+    <!--[if mso]>
+      The 'noscript' tag is used here not for its typical purpose (handling non-JavaScript scenarios) but as a workaround for proper XML interpretation in Outlook.
+      <noscript>
+        - This 'xml' block sets specific Office document settings for the email.
+        <xml>
+          - 'o:OfficeDocumentSettings' and 'o:PixelsPerInch' are used to specify the DPI setting for Outlook. Setting this to 96 ensures that Outlook does not apply its own scaling to the email, preserving the intended layout and design as much as possible.
+          <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+    <!-- End of Outlook DPI Scaling Fix -->
+
+    <style type="text/css">
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 0;
+      }
+      p {
+        font-size: 16px;
+      }
+      img {
+        border: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #3d3d3d;
+        font-size: 16px;
+      }
+      .content {
+        line-height: 20px;
+        font-size: 16px;
+      }
+
+      /* Gmail Blend Modes: it should be used sparingly for background colors.
+      These styles target the specific behavior of Gmail's email client.
+      - The 'screen' blend mode lightens the background, useful for lighter visual effects.
+      - The 'difference' blend mode creates high-contrast effects by subtracting colors.
+      Apply these classes to elements where blending effects are desired in Gmail. */
+
+      u + .body .gmail-blend-screen {
+        background: #000;
+        mix-blend-mode: screen;
+      }
+      u + .body .gmail-blend-difference {
+        background: #000;
+        mix-blend-mode: difference;
+      }
+
+      .ExternalClass {
+        width: 100%;
+      }
+
+      /* .ExternalClass is a class that Outlook applies to HTML emails. It wraps the entire HTML content of an email.
+      By targeting .ExternalClass and its descendant elements (p, span, font, td, div), the CSS snippet ensures that these styles are applied specifically within the context of Outlook-rendered emails. */
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      /* Prevents Apple Mail from resizing or reformatting the email  */
+      a[x-apple-data-detectors='true'] {
+        color: inherit !important;
+        text-decoration: inherit !important;
+      }
+
+      /* Sub-pixel Precision: Some email clients and devices calculate widths in sub-pixel values. By setting breakpoints slightly under a whole number (like 599.98px instead of 600px), you ensure that your styles apply correctly in cases where the client rounds down pixel values. */
+      @media screen and (max-width: 599.98px) {
+      }
+      @media screen and (max-width: 399.98px) {
+      }
+
+      :root {
+        color-scheme: light dark;
+        supported-color-schemes: light dark;
+      }
+      @media (prefers-color-scheme: dark) {
+        body,
+        table {
+          background: #2d2d2d !important;
+          color: #ffffff !important;
+        }
+        .darkmode-transparent {
+          /* Correct dark background appearing over Email Content */
+          background-color: transparent !important;
+        }
+
+        /* Apparently we don't need data-ogsb and we can add this as fallback */
+        [data-ogsc] body,
+        table {
+          background: #2d2d2d !important;
+          color: #ffffff !important;
+        }
+        [data-ogsc] .darkmode-transparent {
+          background-color: transparent !important;
+        }
+      }
+    </style>
+
+    <!--? Address rendering issues that are common in Outlook clients due to their unique rendering engines. -->
+    <!-- Outlook Conditional CSS -->
+    <!--[if mso]>
+      <style type="text/css">
+        body {
+          background-color: #dde0e1 !important;
+        }
+        body,
+        table,
+        td,
+        p,
+        a {
+          font-family: Arial, Helvetica, sans-serif !important;
+        }
+        table {
+          border-spacing: 0 !important;
+          border-collapse: collapse !important;
+        }
+      </style>
+    <![endif]-->
+  </head>
+  <body class="body" xml:lang="en" style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1">
+    <div style="width: 100%; table-layout: fixed; background-color: #dde0e1; color: #3d3d3d; font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin: 0 auto 40px">
+      <div style="max-width: 600px; background-color: #fafdfe; color: #3d3d3d; font-family: Arial, Helvetica, sans-serif; font-size: 16px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin: 0 auto">
+        <div style="font-size: 0; color: #fafdfe; mso-line-height-rule: exactly; line-height: 0px; display: none; max-width: 0px; max-height: 0px; opacity: 0; overflow: hidden; mso-hide: all">
+          This is our preheader text which can be 35-190 characters but 85-100 is recommended.
+          &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
+        </div>
+
+        <!--[if mso]>
+            <table width="600" align="center" style="border-spacing: 0; border-collapse: collapse; color: #3d3d3d;" role="presentation">
+            <tr>
+            <td style="padding: 0;">
+         <![endif]-->
+
+        <table align="center" style="border-spacing: 0; border-collapse: collapse; color: #3d3d3d; font-family: Arial, Helvetica, sans-serif; font-size: 16px; background-color: #fafdfe; margin: 0 auto; padding: 0; width: 100%; max-width: 600px" role="presentation">
+          <tr>
+            <td style="padding: 0">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <tr>
+                  <td style="padding: 10px">
+                    <h1 style="text-align: center; font-size: 30px">This is some text.</h1>
+                    <h2 style="text-align: center; font-size: 26px">This is some text.</h2>
+                    <h3 style="text-align: center; font-size: 22px">This is some text.</h3>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding: 0">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <tr>
+                  <td style="padding: 10px; background-color: #21c6b8">
+                    <h1 style="text-align: center; font-size: 30px">Text without CSS Blend Mode.</h1>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px; background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8">
+                    <div class="gmail-blend-screen">
+                      <div class="gmail-blend-difference">
+                        <h1 style="color: #ffffff; text-align: center; font-size: 30px">This is CSS Blend Mode text.</h1>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+         <![endif]-->
+      </div>
+    </div>
+  </body>
+</html>
