@@ -3,50 +3,40 @@
   lang="en"
   dir="ltr"
   xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
->
+  xmlns:o="urn:schemas-microsoft-com:office:office">
   <head>
     <meta
       http-equiv="Content-Type"
-      content="text/html; charset=utf-8"
-    />
+      content="text/html; charset=utf-8" />
     <meta
       http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    />
+      content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=yes"
-    />
+      content="width=device-width, initial-scale=1, user-scalable=yes" />
     <meta
       name="format-detection"
-      content="telephone=no, date=no, address=no, email=no, url=no"
-    />
+      content="telephone=no, date=no, address=no, email=no, url=no" />
     <meta name="x-apple-disable-message-reformatting" />
     <meta
       name="color-scheme"
-      content="light dark"
-    />
+      content="light dark" />
     <meta
       name="supported-color-schemes"
-      content="light dark"
-    />
+      content="light dark" />
 
     <title>HTML Email Template Project</title>
 
     <link
       rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
+      href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossorigin
-    />
+      crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
     <!--[if mso]>
       <noscript>
@@ -59,6 +49,7 @@
     <![endif]-->
 
     <style type="text/css">
+      /* <!-- --------------------------- General Styles ---------------------------- --> */
       table {
         border-spacing: 0;
         border-collapse: collapse;
@@ -78,6 +69,7 @@
 
       a {
         text-decoration: none;
+        /* Just a deep fallback */
         color: #e8fbfa;
       }
 
@@ -86,11 +78,13 @@
         font-size: 16px;
       }
 
+      /* <!-- ------------------------- Buttons in Outlook -------------------------- --> */
       .bluelink {
         text-decoration: none;
         color: #1e5d7b;
       }
 
+      /* <!-- -------------------------- Zimbra blue links -------------------------- --> */
       span.Object {
         color: inherit !important;
       }
@@ -100,6 +94,10 @@
         text-decoration: none !important;
       }
 
+      /* 
+      <!-- ------------------------- Dark Mode Compatibility in Gmail -------------------------- -->
+      These styles enhance text visibility in Gmail's dark mode by applying specific background colors and blend modes. They ensure the email text remains readable when users switch to dark mode in Gmail.
+      */
       u + .body .gmail-blned-screen {
         background: #000;
         mix-blend-mode: screen;
@@ -110,6 +108,7 @@
         mix-blend-mode: difference;
       }
 
+      /* <!-- ------------- ExternalClass what wraps content on Outlook ------------- --> */
       .ExternalClass {
         width: 100%;
       }
@@ -123,12 +122,13 @@
         line-height: 100%;
       }
 
+      /* <!-- ---------------------------- iOS blue link ---------------------------- --> */
       a[x-apple-data-detectors='true'] {
         color: inherit !important;
         text-decoration: inherit !important;
       }
 
-      /* <!-- --------------------- Styles for less than 600px ---------------------- --> */
+      /* <!-- ------------------ media queries for less than 600px ------------------ --> */
       /* 500px - 599.98px */
       @media screen and (max-width: 599.98px) {
       }
@@ -141,69 +141,26 @@
       @media only screen and (max-width: 399.98px) {
       }
 
+      /* Dark mode */
+      @media (prefers-color-scheme: dark) {
+      }
+
+      /* Ensures the Lato font is loaded last to avoid being overlooked by Gmail, which can ignore @import rules with unrecognized characters. Importing the font from Google Fonts enhances typography across email clients that support web fonts. */
       @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
     </style>
 
-    <!--[if mso]>
-      <style type="text/css">
-        body {
-          background-color: #dde0e1 !important;
-        }
-        body,
-        table,
-        td,
-        p,
-        a {
-          font-family: 'Lato', Arial, Helvetica, sans-serif !important;
-        }
-        table {
-          border-spacing: 0 !important;
-          border-collapse: collapse;
-        }
-      </style>
-    <![endif]-->
+    <!-- Targets Microsoft Office clients, specifically Outlook, to ensure consistency in background color and font styling. It overrides default styles to maintain the design as intended in environments where CSS support is limited. -->
+
+    <!--[if mso]> <![endif]-->
   </head>
   <body
     class="body"
     xml:lang="en"
-    style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1"
-  >
-    <div
-      style="
-        width: 100%;
-        table-layout: fixed;
-        background-color: #dde0e1;
-        color: #3d3d3d;
-        font-family: 'Lato', Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        margin: 0 auto 40px;
-      "
-    >
-      <div
-        style="
-          max-width: 600px;
-          background-color: #fafdfe;
-          color: #3d3d3d;
-          font-family: 'Lato', Arial, Helvetica, sans-serif;
-          font-size: 16px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-          margin: 0 auto;
-        "
-      >
-        <div
-          style="
-            font-size: 0px;
-            color: #fafdfe;
-            mso-line-height-rule: exacly;
-            line-height: 0px;
-            display: none;
-            max-width: 0px;
-            max-height: 0px;
-            opacity: 0;
-            overflow: hidden;
-            mso-hide: all;
-          "
-        >
+    style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1">
+    <div style="width: 100%; table-layout: fixed; background-color: #dde0e1; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; margin: 0 auto 40px">
+      <div style="max-width: 600px; background-color: #fafdfe; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin: 0 auto">
+        <!-- ------------------------------ Preheader ------------------------------ -->
+        <div style="font-size: 0px; color: #fafdfe; mso-line-height-rule: exacly; line-height: 0px; display: none; max-width: 0px; max-height: 0px; opacity: 0; overflow: hidden; mso-hide: all">
           This is our preheader text which can be 35-190 characters but 85-100 is recommended.
           &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
         </div>
@@ -216,36 +173,20 @@
 
         <table
           align="center"
-          style="
-            border-spacing: 0;
-            border-collapse: collapse;
-            color: #3d3d3d;
-            font-family: 'Lato', Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            background-color: #fafdfe;
-            margin: 0 auto;
-            padding: 0;
-            width: 100%;
-            min-width: 600px;
-          "
-          role="presentation"
-        >
+          style="border-spacing: 0; border-collapse: collapse; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; background-color: #fafdfe; margin: 0 auto; padding: 0; width: 100%; min-width: 600px"
+          role="presentation">
           <tr>
             <td style="padding: 0">
               <table
                 width="100%"
                 style="border-spacing: 0"
-                role="presentation"
-              >
+                role="presentation">
                 <!--[if mso]>
                   <tr>
                     <td
                       height="1px"
-                      style="background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8"
-                    >
-                      <div style="font-size: 0; mso-line-height-rule: exactly; line-height: 0; display: none; mso-hide: all">
-                        &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
-                      </div>
+                      style="background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8">
+                      <div style="font-size: 0; mso-line-height-rule: exactly; line-height: 0; display: none; mso-hide: all">&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
                     </td>
                   </tr>
                 <![endif]-->
@@ -257,8 +198,7 @@
                 <tr>
                   <td
                     class=""
-                    style="background-color: #ebf5fa; text-align: center; padding: 10px 0 8px 0"
-                  >
+                    style="background-color: #ebf5fa; text-align: center; padding: 10px 0 8px 0">
                     <a
                       href="https://example.com/1"
                       target="_blank"
@@ -319,24 +259,20 @@
               <table
                 width="100%"
                 style="border-spacing: 0"
-                role="presentation"
-              >
+                role="presentation">
                 <tr>
                   <td
                     class=""
-                    style="background-color: #fafdfe; padding: 20px; text-align: center"
-                  >
+                    style="background-color: #fafdfe; padding: 20px; text-align: center">
                     <a
                       href="https://example.com/"
-                      target="_blank"
-                    >
+                      target="_blank">
                       <img
                         src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/819c4179-e2d4-dea4-110f-e1b527530029.png"
                         alt="logo"
                         title="logo"
                         width="280"
-                        style="border: 0"
-                      />
+                        style="border: 0" />
                     </a>
                   </td>
                 </tr>
@@ -350,8 +286,7 @@
               background="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/9cc2d79c-092b-91cf-d99a-cd05a99415fd.gif"
               width="600"
               height="332"
-              style="background-position: center top; background-repeat: no-repeat; background-color: #1e5d7b"
-            >
+              style="background-position: center top; background-repeat: no-repeat; background-color: #1e5d7b">
               <!--[if mso]>
                 <v:image
                   xmlns:v="urn:scehams-microsoft-com:vml"
@@ -394,33 +329,28 @@
 
               <table
                 class="darkmode-transparent"
-                style="border-spacing: 0"
-              >
+                style="border-spacing: 0">
                 <tr>
                   <td
                     width="600"
                     align="center"
-                    valign="middle"
-                  >
+                    valign="middle">
                     <table
                       class=""
                       style="border-spacing: 0; background-color: transparent"
-                      role="presentation"
-                    >
+                      role="presentation">
                       <tr>
                         <td align="center">
                           <table
                             class=""
                             style="border-spacing: 0"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <tr>
                               <!--[if mso]> <![endif]-->
 
                               <td
                                 align="center"
-                                style="padding: 10px 10px 35px"
-                              >
+                                style="padding: 10px 10px 35px">
                                 <h1 style="font-size: 30px; line-height: 30px; color: #ffffff; margin: 0">Responsive HTML Email Template</h1>
                               </td>
 
@@ -435,29 +365,17 @@
                           <table
                             class=""
                             style="border-spacing: 0; background-color: transparent"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <tr>
                               <td
                                 align="center"
                                 style="border-radius: 10px"
-                                bgcolor="#eff8fe"
-                              >
+                                bgcolor="#eff8fe">
                                 <a
                                   class="bluelink"
                                   href="https://www.example.com/7"
                                   target="_blank"
-                                  style="
-                                    font-size: 17px;
-                                    font-weight: bold;
-                                    text-decoration: none;
-                                    color: #1e5d7b;
-                                    background-color: #eff8fe;
-                                    padding: 12px 20px;
-                                    border: 1px solid #eff8f3;
-                                    border-radius: 10px;
-                                    display: inline-block;
-                                  "
+                                  style="font-size: 17px; font-weight: bold; text-decoration: none; color: #1e5d7b; background-color: #eff8fe; padding: 12px 20px; border: 1px solid #eff8f3; border-radius: 10px; display: inline-block"
                                   >VIEW DEMO</a
                                 >
                               </td>
@@ -485,14 +403,12 @@
               <table
                 width="100%"
                 style="border-spacing: 0"
-                role="presentation"
-              >
+                role="presentation">
                 <tr>
                   <!-- Set font-size:0 to remove whitespace gaps, aligning inline-block or adjacent elements seamlessly within columns. -->
                   <td
                     class="column-wrapper"
-                    style="border-spacing: 0; font-size: 0; text-align: center"
-                  >
+                    style="border-spacing: 0; font-size: 0; text-align: center">
                     <!-- Align elements side-by-side instead of vertically in Outlook using table structure. -->
                     <!--[if mso]> <![endif]-->
 
@@ -500,18 +416,15 @@
                     <table
                       class="column column-one-half"
                       style="border-spacing: 0; vertical-align: top; width: 100%; max-width: 300px; display: inline-block"
-                      role="presentation"
-                    >
+                      role="presentation">
                       <tr>
                         <td
                           class="padding"
-                          style="padding: 20px"
-                        >
+                          style="padding: 20px">
                           <table
                             class="content"
                             style="border-spacing: 0; text-align: left"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <!-- -------------------------------- Image -------------------------------- -->
                             <tr>
                               <td>
@@ -521,14 +434,12 @@
                                 <a
                                   href="https://example.com/8"
                                   target="_blank"
-                                  style="mso-hide: all"
-                                >
+                                  style="mso-hide: all">
                                   <img
                                     src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/13008246-aff8-2851-c750-370e382db263.jpg"
                                     alt="Man"
                                     width="260"
-                                    style="max-width: 260px; border-radius: 8px; border: 0"
-                                  />
+                                    style="max-width: 260px; border-radius: 8px; border: 0" />
                                 </a>
                               </td>
                             </tr>
@@ -543,9 +454,7 @@
                             <!-- ------------------------------ Paragraph ------------------------------ -->
                             <tr>
                               <td style="padding: 10px 0 20px 10px">
-                                <p style="font-size: 15px; margin: 0">
-                                  Create Responsive HTML Email Templates that you can build around to master email development.
-                                </p>
+                                <p style="font-size: 15px; margin: 0">Create Responsive HTML Email Templates that you can build around to master email development.</p>
                               </td>
                             </tr>
 
@@ -553,13 +462,11 @@
                             <tr>
                               <td
                                 align="left"
-                                style="padding-left: 10px"
-                              >
+                                style="padding-left: 10px">
                                 <table
                                   align="left"
                                   style="border-spacing: 0"
-                                  role="presentation"
-                                >
+                                  role="presentation">
                                   <tr>
                                     <td>
                                       <!-- Setup VML rectangle for rounded clickable Button -->
@@ -568,18 +475,7 @@
                                       <a
                                         href="https://www.example.com/9"
                                         target="_blank"
-                                        style="
-                                          font-size: 16px;
-                                          font-weight: bold;
-                                          text-decoration: none;
-                                          color: #ffffff;
-                                          background-color: #1e5d7b;
-                                          padding: 10px 25px;
-                                          border: 1px solid #1e5d7b;
-                                          border-radius: 10px;
-                                          display: inline-block;
-                                          mso-hide: all;
-                                        "
+                                        style="font-size: 16px; font-weight: bold; text-decoration: none; color: #ffffff; background-color: #1e5d7b; padding: 10px 25px; border: 1px solid #1e5d7b; border-radius: 10px; display: inline-block; mso-hide: all"
                                         >HTML Email
                                       </a>
                                     </td>
@@ -598,18 +494,15 @@
                     <table
                       class="column column-one-half"
                       style="border-spacing: 0; vertical-align: top; width: 100%; max-width: 300px; display: inline-block"
-                      role="presentation"
-                    >
+                      role="presentation">
                       <tr>
                         <td
                           class="padding"
-                          style="padding: 20px"
-                        >
+                          style="padding: 20px">
                           <table
                             class="content"
                             style="border-spacing: 0; text-align: left"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <!-- -------------------------------- Image -------------------------------- -->
                             <tr>
                               <td>
@@ -620,14 +513,12 @@
                                 <a
                                   href="https://www.example.com/10"
                                   target="_blank"
-                                  style="mso-hide: all"
-                                >
+                                  style="mso-hide: all">
                                   <img
                                     src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/34393af4-503d-d5e0-4861-74f4fdcaf65e.jpg"
                                     alt="Women"
                                     width="260"
-                                    style="max-width: 260px; border-radius: 8px; border: 0"
-                                  />
+                                    style="max-width: 260px; border-radius: 8px; border: 0" />
                                 </a>
                               </td>
                             </tr>
@@ -642,9 +533,7 @@
                             <!-- ------------------------------ Paragraph ------------------------------ -->
                             <tr>
                               <td style="padding: 10px 0 20px 10px">
-                                <p style="font-size: 15px; margin: 0">
-                                  Create Responsive HTML Email Templates that you can build around to master email development.
-                                </p>
+                                <p style="font-size: 15px; margin: 0">Create Responsive HTML Email Templates that you can build around to master email development.</p>
                               </td>
                             </tr>
 
@@ -652,13 +541,11 @@
                             <tr>
                               <td
                                 align="left"
-                                style="padding-left: 10px"
-                              >
+                                style="padding-left: 10px">
                                 <table
                                   align="left"
                                   style="border-spacing: 0"
-                                  role="presentation"
-                                >
+                                  role="presentation">
                                   <tr>
                                     <td align="left">
                                       <!-- Setup VML rectangle for rounded clickable Button -->
@@ -668,18 +555,7 @@
                                       <a
                                         href="https://www.example.com/11"
                                         target="_blank"
-                                        style="
-                                          font-size: 16px;
-                                          font-weight: bold;
-                                          text-decoration: none;
-                                          color: #ffffff;
-                                          background-color: #1e5d7b;
-                                          padding: 10px 25px;
-                                          border: 1px solid #1e5d7b;
-                                          border-radius: 10px;
-                                          display: inline-block;
-                                          mso-hide: all;
-                                        "
+                                        style="font-size: 16px; font-weight: bold; text-decoration: none; color: #ffffff; background-color: #1e5d7b; padding: 10px 25px; border: 1px solid #1e5d7b; border-radius: 10px; display: inline-block; mso-hide: all"
                                         >Get Started</a
                                       >
                                     </td>
@@ -705,8 +581,7 @@
               <table
                 width="100%"
                 style="border-spacing: 0"
-                role="presentation"
-              >
+                role="presentation">
                 <!-- ----------------------------- Border Top ------------------------------ -->
                 <tr>
                   <td style="padding: 1.4px; background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8"></td>
@@ -716,39 +591,33 @@
                 <tr>
                   <td
                     class="column-wrapper"
-                    style="padding: 0; font-size: 0; text-align: center; background: linear-gradient(#1e5d7b, #1e5d7b); background-color: #1e5d7b"
-                  >
+                    style="padding: 0; font-size: 0; text-align: center; background: linear-gradient(#1e5d7b, #1e5d7b); background-color: #1e5d7b">
                     <!--[if mso]> <![endif]-->
 
                     <!-- ------------------------------ Column 1 ------------------------------- -->
                     <table
                       class="column column-one-third"
                       style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 200px; display: inline-block"
-                      role="presentation"
-                    >
+                      role="presentation">
                       <tr>
                         <td
                           class="padding"
-                          style="padding: 20px; background: linear-gradient(#1e5d7b, #1e5d7b)"
-                        >
+                          style="padding: 20px; background: linear-gradient(#1e5d7b, #1e5d7b)">
                           <table
                             class="content"
                             style="border-spacing: 0; text-align: center"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <tr>
                               <td style="background: linear-gradient(#1e5d7b, #1e5d7b); background-color: #1e5d7b">
                                 <a
                                   href="https://example.com/12"
-                                  target="_blank"
-                                >
+                                  target="_blank">
                                   <img
                                     src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/10ae33ec-8d1f-e539-f04e-84166c15e74f.png"
                                     alt="Woman"
                                     class="one-third-col-img"
                                     width="160"
-                                    style="max-width: 160px; border: 0"
-                                  />
+                                    style="max-width: 160px; border: 0" />
                                 </a>
                               </td>
                             </tr>
@@ -763,26 +632,20 @@
                     <table
                       class="column column-two-third"
                       style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 400px; display: inline-block"
-                      role="presentation"
-                    >
+                      role="presentation">
                       <tr>
                         <td
                           class="padding"
-                          style="padding: 0px; background: linear-gradient(#1e5d7b, #1e5d7b); background-color: #1e5d7b"
-                        >
+                          style="padding: 0px; background: linear-gradient(#1e5d7b, #1e5d7b); background-color: #1e5d7b">
                           <table
                             class="content"
                             style="border-spacing: 0; text-align: left"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <tr>
                               <td style="vertical-align: middle; padding: 0 10px; background: linear-gradient(#1e5d7b, #1e5d7b); background-color: #1e5d7b">
                                 <div class="darkmode-transparent gmail-blend-screen">
                                   <div class="darkmode-transparent gmail-blend-difference">
-                                    <h3 style="font-size: 20px; line-height: 27px; color: #ffffff; letter-spacing: 0.2px; font-weight: 300; margin: 0">
-                                      "This is the best responsive email template course and framework! I have thoroughly enjoyed the email course."<br />-Leslie
-                                      J.
-                                    </h3>
+                                    <h3 style="font-size: 20px; line-height: 27px; color: #ffffff; letter-spacing: 0.2px; font-weight: 300; margin: 0">"This is the best responsive email template course and framework! I have thoroughly enjoyed the email course."<br />-Leslie J.</h3>
                                   </div>
                                 </div>
                               </td>
@@ -811,13 +674,11 @@
               <table
                 width="100%"
                 style="border-spacing: 0"
-                role="presentation"
-              >
+                role="presentation">
                 <tr>
                   <td
                     class="column-wrapper"
-                    style="padding: 0; font-size: 0; text-align: center"
-                  >
+                    style="padding: 0; font-size: 0; text-align: center">
                     <!-- ------ Outlook: Ensure displaying the content in a single column ------ -->
                     <!--[if mso]> <![endif]-->
 
@@ -825,18 +686,15 @@
                     <table
                       class="column column-one-third"
                       style="border-spacing: 0; vertical-align: top; width: 100%; max-width: 200px; display: inline-block"
-                      role="presentation"
-                    >
+                      role="presentation">
                       <tr>
                         <td
                           class="padding"
-                          style="padding: 20px 15px"
-                        >
+                          style="padding: 20px 15px">
                           <table
                             class="content"
                             style="border-spacing: 0; text-align: center"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <!-- -------------------------------- Image -------------------------------- -->
                             <tr>
                               <td>
@@ -845,14 +703,12 @@
                                 <a
                                   href="https://www.example.com/13"
                                   target="_blank"
-                                  style="mso-hide: all"
-                                >
+                                  style="mso-hide: all">
                                   <img
                                     src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/30dfd342-60ab-6693-0372-f65c6d1311ad.jpg"
                                     alt="Newsletter"
                                     width="150"
-                                    style="max-width: 150px; border-radius: 5px; border: 0"
-                                  />
+                                    style="max-width: 150px; border-radius: 5px; border: 0" />
                                 </a>
                               </td>
                             </tr>
@@ -877,8 +733,7 @@
                                 <table
                                   align="center"
                                   style="border-spacing: 0"
-                                  role="presentation"
-                                >
+                                  role="presentation">
                                   <tr>
                                     <td align="center">
                                       <!-- Setup VML rectangle for rounded Clickable Button -->
@@ -888,18 +743,7 @@
                                         class="bluelink"
                                         href="https://example.com/"
                                         target="_blank"
-                                        style="
-                                          font-size: 15px;
-                                          font-weight: bold;
-                                          text-decoration: none;
-                                          color: #1e5d7b;
-                                          background-color: #dde0e1;
-                                          padding: 8px 20px;
-                                          border: 1px solid #dde0e1;
-                                          border-radius: 10px;
-                                          display: inline-block;
-                                          mso-hide: all;
-                                        "
+                                        style="font-size: 15px; font-weight: bold; text-decoration: none; color: #1e5d7b; background-color: #dde0e1; padding: 8px 20px; border: 1px solid #dde0e1; border-radius: 10px; display: inline-block; mso-hide: all"
                                         >Email Audience</a
                                       >
                                     </td>
@@ -918,18 +762,15 @@
                     <table
                       class=""
                       style="border-spacing: 0; vertical-align: top; width: 100%; max-width: 200px; display: inline-block"
-                      role="presentation"
-                    >
+                      role="presentation">
                       <tr>
                         <td
                           class=""
-                          style="padding: 20px 15px"
-                        >
+                          style="padding: 20px 15px">
                           <table
                             class="content"
                             style="border-spacing: 0; text-align: center"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <!-- -------------------------------- Image -------------------------------- -->
                             <tr>
                               <td>
@@ -968,8 +809,7 @@
                                 <table
                                   align="center"
                                   style="border-spacing: 0"
-                                  role="presentation"
-                                >
+                                  role="presentation">
                                   <tr>
                                     <td align="center">
                                       <!-- Setup VML rectangle for rounded Clickable Button -->
@@ -978,18 +818,7 @@
                                       <a
                                         href="https://www.example.com/16"
                                         target="_blank"
-                                        style="
-                                          font-size: 15px;
-                                          font-weight: bold;
-                                          text-decoration: none;
-                                          color: #ffffff;
-                                          background-color: #1e5d7b;
-                                          padding: 8px 20px;
-                                          border: 1px solid #1e5d7b;
-                                          border-radius: 10px;
-                                          display: inline-block;
-                                          mso-hide: all;
-                                        "
+                                        style="font-size: 15px; font-weight: bold; text-decoration: none; color: #ffffff; background-color: #1e5d7b; padding: 8px 20px; border: 1px solid #1e5d7b; border-radius: 10px; display: inline-block; mso-hide: all"
                                         >Online Sales
                                       </a>
                                     </td>
@@ -1008,32 +837,369 @@
                     <table
                       class="s"
                       style="border-spacing: 0; vertical-align: top; max-width: 200px; display: inline-block"
-                      role="presentation"
-                    >
+                      role="presentation">
                       <tr>
                         <td
                           class=""
-                          style="padding: 20px 15px"
-                        >
+                          style="padding: 20px 15px">
                           <table
                             class="content"
                             style="border-spacing: 0; text-align: center"
-                            role="presentation"
-                          >
+                            role="presentation">
                             <!-- -------------------------------- Image -------------------------------- -->
                             <tr>
                               <td>
                                 <!-- Setup VML rectangle for rounded Image -->
                                 <!--[if mso]> <![endif]-->
 
-                                <a href=""></a>
+                                <a
+                                  href="https://www.example.com/17"
+                                  target="_blank"
+                                  style="mso-hide: all">
+                                  <img
+                                    src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/0e95f758-d444-f22f-d475-4dde0da6d2a6.jpg"
+                                    alt="Blogging"
+                                    width="150"
+                                    style="max-width: 150px; border-radius: 5px; border: 0" />
+                                </a>
+                              </td>
+                            </tr>
+
+                            <!-- -------------------------------- Title -------------------------------- -->
+                            <tr>
+                              <td style="padding: 20px 10px 10px">
+                                <h2 style="font-size: 17px; font-weight: bold; margin: 0">BLOGGING</h2>
+                              </td>
+                            </tr>
+
+                            <!-- ------------------------------ Paragraph ------------------------------ -->
+                            <tr>
+                              <td style="padding: 10px 10px 25px 10px">
+                                <p style="font-size: 15px; margin: 0">Responsive HTML Email Templates that you can build around to master email development.</p>
+                              </td>
+                            </tr>
+
+                            <!-- ------------------------------- Button -------------------------------- -->
+                            <tr>
+                              <td align="center">
+                                <table
+                                  align="center"
+                                  style="border-spacing: 0"
+                                  role="presentation">
+                                  <tr>
+                                    <td align="center">
+                                      <!-- Setup VML rectangle for rounded Clickable Button -->
+                                      <!--[if mso]> <![endif]-->
+
+                                      <a
+                                        class=""
+                                        href="https://example.com/18"
+                                        target="_blank"
+                                        style="font-size: 15px; font-weight: bold; text-decoration: none; color: #1e5d7b; background-color: #dde0e1; padding: 8px 20px; border: 1px solid #dde0e1; border-radius: 10px; display: inline-block; mso-hide: all">
+                                        Learn more..
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
                               </td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                     </table>
+
+                    <!--[if mso]>
+                      </td>
+                      </tr>
+                      </table>
+                    <![endif]-->
                   </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                                4 Columns                                -->
+          <!-- ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 0">
+              <table
+                width="100%"
+                style="border-spacing: 0; background-color: #eaf6fb"
+                role="presentation">
+                <!-- ----------------------------- Border Top ------------------------------ -->
+                <tr>
+                  <td style="padding: 1.4px; background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8"></td>
+                </tr>
+
+                <tr>
+                  <td
+                    class="column-wrapper"
+                    style="padding: 10px 0; font-size: 0; text-align: center">
+                    <!-- ------ Outlook: Ensure displaying the content in a single column ------ -->
+                    <!--[if mso]> <![endif]-->
+
+                    <!-- ------------------------------ Column 1 ------------------------------- -->
+                    <table
+                      class="column column-one-fourth"
+                      style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 150px; display: inline-block"
+                      role="presentation">
+                      <tr>
+                        <td>
+                          <table
+                            class="content"
+                            style="border-spacing: 0; text-align: center"
+                            role="presentation">
+                            <tr>
+                              <td style="padding: 15px">
+                                <!-- Setup VML rectangle for rounded Image -->
+                                <!--[if mso]> <![endif]-->
+
+                                <a
+                                  href="https://example.com/19"
+                                  target="_blank"
+                                  style="mso-hide: all">
+                                  <img
+                                    src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/9532d872-1d92-78d5-5e51-3db12b47a802.jpg"
+                                    alt="Gmail"
+                                    width="120"
+                                    style="min-width: 120px; border-radius: 5px; border: 0" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- ------ Outlook: Ensure displaying the content in a single column ------ -->
+                    <!--[if mso]> <![endif]-->
+
+                    <!-- ------------------------------ Column 2 ------------------------------- -->
+                    <table
+                      class="column column-one-fourth"
+                      style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 150px; display: inline-block"
+                      role="presentation">
+                      <tr>
+                        <td>
+                          <table
+                            class="content"
+                            style="border-spacing: 0; text-align: center"
+                            role="presentation">
+                            <tr>
+                              <td style="padding: 15px">
+                                <!-- Setup VML rectangle for rounded Image -->
+                                <!--[if mso]> <![endif]-->
+
+                                <a
+                                  href="https://example.com/20"
+                                  target="_blank"
+                                  style="mso-hide: all">
+                                  <img
+                                    src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/595ae7c9-c54d-1045-69ac-136779667c60.jpg"
+                                    alt="iCloud"
+                                    width="120"
+                                    style="max-width: 120px; border-radius: 5px; border: 0" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- ------ Outlook: Ensure displaying the content in a single column ------ -->
+                    <!--[if mso]> <![endif]-->
+
+                    <!-- ------------------------------ Column 3 ------------------------------- -->
+                    <table
+                      class="column column-one-fourth"
+                      style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 150px; display: inline-block"
+                      role="presentation">
+                      <tr>
+                        <td>
+                          <table
+                            class="content"
+                            style="border-spacing: 0; text-align: center"
+                            role="presentation">
+                            <tr>
+                              <td style="padding: 15px">
+                                <!-- Setup VML rectangle for rounded Image -->
+                                <!--[if mso]> <![endif]-->
+                                <a
+                                  href="https://example.com/21"
+                                  target="_blank"
+                                  style="mso-hide: all">
+                                  <img
+                                    src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/216cbb23-6c53-b747-c30b-2ef6d15c5b9d.jpg"
+                                    alt="Outlook"
+                                    width="120"
+                                    style="max-width: 120px; border-radius: 5px; border: 0" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- ------ Outlook: Ensure displaying the content in a single column ------ -->
+                    <!--[if mso]> <![endif]-->
+
+                    <!-- ------------------------------ Column 4 ------------------------------- -->
+                    <table
+                      class="column column-one-fourth"
+                      style="border-spacing: 0; vertical-align: middle; width: 100%; max-width: 150px; display: inline-block"
+                      role="presentation">
+                      <tr>
+                        <td>
+                          <table
+                            class="content"
+                            style="border-spacing: 0; text-align: center"
+                            role="presentation">
+                            <tr>
+                              <td style="padding: 15px">
+                                <!-- Setup VML rectangle for rounded Image -->
+                                <!--[if mso]> <![endif]-->
+
+                                <a
+                                  href="https://example.com/22"
+                                  target="_blank"
+                                  style="mso-hide: all">
+                                  <img
+                                    src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/ff10ce83-13fb-011b-eaa4-1ca0913a4666.jpg"
+                                    alt="Yahoo"
+                                    width="120"
+                                    style="min-width: 120px; border-radius: 5px; border: 0" />
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--[if mso]> <![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                                 Footer                                  -->
+          <!-- ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="background: linear-gradient(#3d3d3d, #3d3d3d); background-color: #3d3d3d; padding: 0">
+              <table
+                width="100%"
+                style="border-spacing: 0"
+                role="presentation">
+                <!-- ----------------------------- Border Top ------------------------------ -->
+                <tr>
+                  <td style="padding: 1.4px; background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8"></td>
+                </tr>
+
+                <!-- ------------------------------ Top Image ------------------------------ -->
+                <tr>
+                  <td style="padding: 55px 0 11px; text-align: center">
+                    <a
+                      href="https://example.com/23"
+                      target="_blank">
+                      <img
+                        src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/545fc2c7-d9b0-e5f7-2f96-84fb742a5a1a.png"
+                        alt="Logo 2"
+                        width="210"
+                        style="border: 0" />
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- -------------------------------- Row 1 -------------------------------- -->
+                <tr>
+                  <td style="padding: 11px 0; color: #ffffff; text-align: center; font-size: 16px">
+                    <!-- Dark Mode Compatibility in Gmail: Ensures text remains visible in dark mode. -->
+                    <div class="gmail-blend-screen">
+                      <!-- Applies a screen blend mode to enhance text visibility in dark mode. -->
+                      <div class="gmail-blend-difference">
+                        <p style="font-size: 16px; margin: 0">Responsive HTML Email</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- -------------------------------- Row 2 -------------------------------- -->
+                <tr>
+                  <td style="padding: 11px 0; color: #ffffff; text-align: center; font-size: 16px">
+                    <div class="gmail-blend-screen">
+                      <div class="gmail-blend-difference">
+                        <!-- Prevent auto-linking by email clients and ensure consistent, non-breaking presentation of addresses. -->
+                        <p style="font-size: 16px; margin: 0">123&#8203; Street Road, City, State 55555</p>
+                      </div>
+                    </div>
+
+                    <!-- Formatting to maintain address presentation and ensure proper layout or spacing. -->
+                    <!--[if mso]> <![endif]-->
+                  </td>
+                </tr>
+
+                <!-- -------------------------------- Row 3 -------------------------------- -->
+                <tr>
+                  <td style="padding: 11px 0; color: #ffffff; text-align: center; font-size: 16px">
+                    <div class="gmail-blend-screen">
+                      <div class="gmail-blend-difference">
+                        <p style="font-size: 16px; margin: 0">
+                          <!-- Prevent auto-linking by email clients and ensure consistent, non-breaking presentation of email addresses. -->
+                          <!-- Mailto Link: Opens a new email to the given address. -->
+                          <a
+                            href="mailto:email@example.com"
+                            style="text-decoration: none; color: #ffffff; color: inherit"
+                            >email&#8203;@example.com</a
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- -------------------------------- Row 4 -------------------------------- -->
+                <tr>
+                  <td style="padding: 11px 0; color: #ffffff; text-align: center; font-size: 16px">
+                    <div class="gmail-blend-screen">
+                      <div class="gmail-blend-difference">
+                        <!-- Prevent auto-linking by email clients and ensure consistent, non-breaking presentation of phone numbers. -->
+                        <!-- Tel Link: Initiates a call to the given number. -->
+                        <a
+                          href="tel:18008888888"
+                          style="text-decoration: none; color: #ffffff; color: inherit"
+                          >1&#8203;-800-888-8888</a
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- -------------------------------- Row 5 -------------------------------- -->
+                <tr>
+                  <td style="padding: 10px 0 65px; color: #ffffff; text-align: center; font-size: 13px">
+                    <div class="gmail-blend-screen">
+                      <div class="gmail-blend-difference">
+                        <p style="font-size: 13px; margin: 0">
+                          <a
+                            href="https://www.example.com/24"
+                            style="text-decoration: none; color: #ffffff; color: inherit; font-size: 13px"
+                            >UNSUBSCRIBE</a
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ---------------------------- Border Bottom ---------------------------- -->
+                <tr>
+                  <td style="padding: 1.8px; background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8"></td>
                 </tr>
               </table>
             </td>
