@@ -30,7 +30,7 @@
     <meta
       name="supported-color-schemes"
       content="light dark" />
-    <!-- Sets the email's title, which can appear in tab titles or previews depending on the email client. -->
+    <!-- Preview for Development -->
     <title>HTML Email Template Project</title>
     <!-- Pre-establishes a connection to Google Fonts for faster font loading, improving the email's render time. -->
     <link
@@ -40,7 +40,7 @@
       rel="preconnect"
       href="https://fonts.gstatic.com"
       crossorigin />
-    <!-- Includes the Lato font with specified weights and styles from Google Fonts, enhancing the email's typography. -->
+    <!-- Lato font. -->
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet" />
@@ -114,7 +114,7 @@
         mix-blend-mode: difference;
       }
 
-      /* <!-- ------------- ExternalClass what wraps content on Outlook ------------- --> */
+      /* <!-- ------------ ExternalClass which wraps content on Outlook ------------- --> */
       .ExternalClass {
         width: 100%;
       }
@@ -203,12 +203,12 @@
         }
       }
 
+      /* Dark mode */
       :root {
         color-scheme: light dark;
         supported-color-schemes: light dark;
       }
 
-      /* Dark mode */
       @media (prefers-color-scheme: dark) {
         body,
         table,
@@ -217,6 +217,7 @@
           color: #ffffff !important;
         }
 
+        /* Targets elements modified by Gmail for Dark Mode consistency. */
         [data-ogsc] body,
         table,
         .darkmode-bg {
@@ -228,12 +229,13 @@
           background-color: transparent !important;
         }
 
+        /* Ensures transparency for elements modified by Gmail in Dark Mode. */
         [data-ogsc] .darkmode-transparent {
           background-color: transparent !important;
         }
       }
 
-      /* Ensures the Lato font is loaded last to avoid being overlooked by Gmail, which can ignore @import rules with unrecognized characters. Importing the font from Google Fonts enhances typography across email clients that support web fonts. */
+      /* Ensures the Lato font is loaded last to avoid being overlooked by Gmail, which can ignore @import rules with unrecognized characters. */
       @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
     </style>
 
@@ -266,10 +268,12 @@
       <div style="max-width: 600px; background-color: #fafdfe; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin: 0 auto">
         <!-- ------------------------------ Preheader ------------------------------ -->
         <div style="font-size: 0px; color: #fafdfe; mso-line-height-rule: exactly; line-height: 0px; display: none; max-width: 0px; max-height: 0px; opacity: 0; overflow: hidden; mso-hide: all">
-          <!-- -------- Add Preheader Text Here (85-100 characters in length) -------- -->
+          <!-- ----------------- Preheader Text (85-100 characters) ------------------ -->
           This is our preheader text which can be 35-190 characters but 85-100 is recommended.
           &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
         </div>
+
+        <!-- MSO Conditional: Ensures email layout compatibility with Outlook by setting a fixed table width and general styling. This structure helps maintain the intended design. -->
 
         <!--[if mso]>
           <table width="600" align="center" style="border-spacing: 0; border-collapse:collapse; color: #3d3d3d;" role="presentation">
