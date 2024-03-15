@@ -182,20 +182,35 @@
     class="body"
     xml:lang="en"
     style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1">
+    <!-- Reinforce and acts as the <body>, establishes email's maximum width, sets global background color, and applies base font styling for consistent appearance across email clients. -->
     <div style="width: 100%; table-layout: fixed; background-color: #dde0e1; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; margin: 0 auto 40px">
+      <!-- Centers the email content within the outer container, ensuring the contained table is responsive and does not span beyond the 600px width limit. 
+      Some clients rely in these 2 divs.
+      Reinforce <table> width.
+      -->
       <div style="max-width: 600px; background-color: #f1fdfe; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin: auto">
         <!-- ------------------------------ Preheader ------------------------------ -->
-        <div style="font-size: 0px; color: #fafdfe; mso-line-height-rule: exacly; line-height: 0px; display: none; min-width: 0px; min-height: 0px; opacity: 0; overflow: hidden; mso-hide: all"></div>
-        <!-- ----------------- Preheader Text (85-100 characters) ------------------ -->
-        This is our preheader text which can be 35-190 characters but 85-100 is recommended.
-        &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
+        <!-- Styles to hide it from normal view -->
+        <div style="font-size: 0px; color: #fafdfe; mso-line-height-rule: exacly; line-height: 0px; display: none; min-width: 0px; min-height: 0px; opacity: 0; overflow: hidden; mso-hide: all">
+          <!-- ----------------- Preheader Text (85-100 characters) ------------------ -->
+          This is our preheader text which can be 35-190 characters but 85-100 is recommended.
+          <!-- Push content out of the preview text -->
+          &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
+        </div>
+
+        <!-- MSO Conditional: ENsures email layout compatibility with Outlook by setting a fixed table width and general styling. This structure helps maintain the intended design. -->
+
+        <!--[if mso]> <![endif]-->
+
+        <table
+          align="center"
+          style="border-spacing: 0; border-collapse: collapse; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; background-color: #fafdfe; margin: 0 auto; padding: 0; width: 100%; max-width: 600px"
+          role="presentation">
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                              Social Icons                               -->
+          <!-- ----------------------------------------------------------------------- -->
+        </table>
       </div>
-
-      <!-- MSO Conditional: ENsures email layout compatibility with Outlook by setting a fixed table width and general styling. This structure helps maintain the intended design. -->
-
-      <!--[if mso]> <![endif]-->
-
-      <table></table>
     </div>
   </body>
 </html>
