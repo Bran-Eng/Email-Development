@@ -218,6 +218,7 @@
         }
 
         /* Targets elements modified by Gmail for Dark Mode consistency. */
+        /* data-ogsc for color, ogsb for background color */
         [data-ogsc] body,
         table,
         .darkmode-bg {
@@ -451,7 +452,7 @@
 
               <![endif]-->
 
-              <!-- Outer Table Setup: This table serves as the main container for the email section, providing general alignment and setting the stage for detailed content structuring -->
+              <!-- Main Content Table: Acts as the primary layout framework for the banner's content, specifically designed to hold text and a button. Utilizes transparency for seamless integration with the email's background, ensuring a cohesive visual flow. -->
               <table
                 class="darkmode-transparent"
                 style="border-spacing: 0; background-color: transparent"
@@ -461,7 +462,7 @@
                     width="600"
                     align="center"
                     valign="middle">
-                    <!-- Nested Table for Content Segmentation: Adding another table allows for the inclusion of multiple <tr> tags, facilitating separate rows for the title and button. This enables distinct styling and positioning for each element. -->
+                    <!-- Content Segmentation Table: Facilitates structured placement of distinct content elements (text, button) within separate rows. Allows for versatile styling and alignment, ensuring each component is displayed optimally. -->
                     <table
                       class="darkmode-transparent"
                       style="border-spacing: 0; background-color: transparent"
