@@ -3,47 +3,57 @@
   lang="en"
   dir="ltr"
   xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:o="urn:schemas-microsoft-com:office:office">
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
   <head>
     <!-- Specifies the document's MIME type and character encoding (UTF-8), ensuring correct display of text and special characters. -->
     <meta
       http-equiv="Content-Type"
-      content="text/html; charset=utf-8" />
+      content="text/html; charset=utf-8"
+    />
     <!-- Tells Internet Explorer to use its laterst rendering engine, improving compatibility and dislplay. -->
     <meta
       http-equiv="X-UA-Compatible"
-      content="IE=edge" />
+      content="IE=edge"
+    />
     <!-- Optimizes the email's layout for viewing on different devices by setting the viewport width and initial zoom level. -->
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=yes" />
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
     <!-- Prevents automatic detection and styling of phone numbers, dates, and other formats, allowing more control over the presentation. -->
     <meta
       name="format-detection"
-      content="telephone=no, date=no, address=no, email=no, url=no" />
+      content="telephone=no, date=no, address=no, email=no, url=no"
+    />
     <!-- Disables automatic formatting of email content by Apple Mail clientes, preserving the intended design -->
     <meta name="x-apple-disable-message-reformatting" />
     <!-- Indicates support for light and dark color schemes, allowing emails to adap to user-preferred system themes. -->
     <meta
       name="color-scheme"
-      content="light dark" />
+      content="light dark"
+    />
     <meta
       name="supported-color-schemes"
-      content="light dark" />
+      content="light dark"
+    />
     <!-- Preview for Development -->
     <title>HTML Email Template Project</title>
     <!-- Pre-establishes a connection to Google Fonts for faster font loading, improving the email's render time. -->
     <link
       rel="preconnect"
-      href="https://fonts.googleapis.com" />
+      href="https://fonts.googleapis.com"
+    />
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossorigin />
+      crossorigin
+    />
     <!-- Lato font.  -->
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <!-- Ensures Microsoft Office clients (like Outlook) render the email at 96 pixels per inch, maintaining layout consistency across different DPI settings. -->
     <!--[if mso]> <![endif]-->
 
@@ -181,34 +191,201 @@
   <body
     class="body"
     xml:lang="en"
-    style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1">
+    style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1"
+  >
     <!-- Reinforce and acts as the <body>, establishes email's maximum width, sets global background color, and applies base font styling for consistent appearance across email clients. -->
-    <div style="width: 100%; table-layout: fixed; background-color: #dde0e1; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; margin: 0 auto 40px">
+    <div
+      style="
+        width: 100%;
+        table-layout: fixed;
+        background-color: #dde0e1;
+        color: #3d3d3d;
+        font-family: 'Lato', Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        margin: 0 auto 40px;
+      "
+    >
       <!-- Centers the email content within the outer container, ensuring the contained table is responsive and does not span beyond the 600px width limit. 
       Some clients rely in these 2 divs.
       Reinforce <table> width.
       -->
-      <div style="max-width: 600px; background-color: #f1fdfe; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin: auto">
+      <div
+        style="
+          max-width: 600px;
+          background-color: #f1fdfe;
+          color: #3d3d3d;
+          font-family: 'Lato', Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          margin: auto;
+        "
+      >
         <!-- ------------------------------ Preheader ------------------------------ -->
         <!-- Styles to hide it from normal view -->
-        <div style="font-size: 0px; color: #fafdfe; mso-line-height-rule: exacly; line-height: 0px; display: none; min-width: 0px; min-height: 0px; opacity: 0; overflow: hidden; mso-hide: all">
+        <div
+          style="
+            font-size: 0px;
+            color: #fafdfe;
+            mso-line-height-rule: exacly;
+            line-height: 0px;
+            display: none;
+            min-width: 0px;
+            min-height: 0px;
+            opacity: 0;
+            overflow: hidden;
+            mso-hide: all;
+          "
+        >
           <!-- ----------------- Preheader Text (85-100 characters) ------------------ -->
           This is our preheader text which can be 35-190 characters but 85-100 is recommended.
           <!-- Push content out of the preview text -->
           &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
         </div>
 
-        <!-- MSO Conditional: ENsures email layout compatibility with Outlook by setting a fixed table width and general styling. This structure helps maintain the intended design. -->
+        <!-- MSO Conditional: Ensures email layout compatibility with Outlook by setting a fixed table width and general styling. This structure helps maintain the intended design. -->
 
         <!--[if mso]> <![endif]-->
 
         <table
           align="center"
-          style="border-spacing: 0; border-collapse: collapse; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; background-color: #fafdfe; margin: 0 auto; padding: 0; width: 100%; max-width: 600px"
-          role="presentation">
+          style="
+            border-spacing: 0;
+            border-collapse: collapse;
+            color: #3d3d3d;
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            background-color: #fafdfe;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            max-width: 600px;
+          "
+          role="presentation"
+        >
           <!-- ----------------------------------------------------------------------- -->
           <!--                              Social Icons                               -->
           <!-- ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 0">
+              <table
+                width="100%"
+                style="border-spacing: 0"
+                role="presentation"
+              >
+                <!-- --------------------------- Fix border top ---------------------------- -->
+                <!--[if mso]> <![endif]-->
+                <!-- ----------------------------- Border Top ------------------------------ -->
+                <tr>
+                  <td style="padding: 1.4px; background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8; mso-hide: all"></td>
+                </tr>
+
+                <!-- -------------------------------- Icons -------------------------------- -->
+                <tr>
+                  <td
+                    class="darkmode-bg"
+                    style="background-color: #ebf5fa; text-align: center; padding: 10px 0 8px 0"
+                  >
+                    <a
+                      href="https://example.com/1"
+                      target="_blank"
+                      ><img
+                        src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/a14ef44e-fdb2-3a1c-28f4-c1e1043e407a.png"
+                        alt="Facebook"
+                        width="32"
+                        style="border: 0"
+                    /></a>
+                    <a
+                      href="https://example.com/2"
+                      target="_blank"
+                      ><img
+                        src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/55204969-d9cc-9dc9-d3c9-81bec7429833.png"
+                        alt="Twitter X"
+                        width="32"
+                        style="border: 0"
+                    /></a>
+                    <a
+                      href="https://example.com/3"
+                      target="_blank"
+                      ><img
+                        src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/b24e2cfa-e8a2-999a-67d9-5f073f94c3cc.png"
+                        alt="YouTube"
+                        width="32"
+                        style="border: 0"
+                    /></a>
+                    <a
+                      href="https://example.com/4"
+                      target="_blank"
+                      ><img
+                        src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/e3fe30fa-46b2-6bc6-2630-d5f7f07f46ec.png"
+                        alt="Instagram"
+                        width="32"
+                        style="border: 0"
+                    /></a>
+                    <a
+                      href="https://example.com/5"
+                      target="_blank"
+                      ><img
+                        src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/b1325253-f1ec-befd-a7f0-9e9413eb8793.png"
+                        alt="Linkedin"
+                        width="32"
+                        style="border: 0"
+                    /></a>
+                  </td>
+                </tr>
+
+                <!-- ---------------------------- Border Bottom ---------------------------- -->
+                <tr>
+                  <td style="padding: 1.4px; background: linear-gradient(#21c6b8, #21c6b8); background-color: #21c6b8; mso-hide: all"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                                  Logo                                   -->
+          <!-- ----------------------------------------------------------------------- -->
+          <tr>
+            <td style="padding: 0">
+              <table
+                width="100%"
+                style="border-spacing: 0"
+                role="presentation"
+              >
+                <tr>
+                  <!-- Because we need padding here, we added another set of: <tr><td> -->
+                  <td
+                    class="darkmode-bg"
+                    style="background-color: #fafdfe; padding: 20px 0; text-align: center"
+                  >
+                    <a
+                      href="https://example.com/6"
+                      target="_blank"
+                      ><img
+                        src="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/819c4179-e2d4-dea4-110f-e1b527530029.png"
+                        alt="Logo"
+                        title="Logo"
+                        width="280"
+                        style="border: 0"
+                    /></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                                 Banner                                  -->
+          <!-- ----------------------------------------------------------------------- -->
+          <tr>
+            <!-- -------------------------------- Image -------------------------------- -->
+            <td
+              class="banner"
+              background="https://mcusercontent.com/474f5b70c3b324277323d4c42/images/9cc2d79c-092b-91cf-d99a-cd05a99415fd.gif"
+              width="600"
+              height="332"
+              style="background-position: center top; background-repeat: no-repeat; background-color: #1e5d7b"
+            ></td>
+          </tr>
         </table>
       </div>
     </div>
