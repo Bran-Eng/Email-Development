@@ -1,38 +1,47 @@
 <!DOCTYPE html>
+<!-- (xmlns:v) For Outlook graphics -->
+<!-- (xmlns:o) For Outlook-specific elements -->
 <html
   lang="en"
   dir="ltr"
   xmlns:v="urn:schemas-microsoft-com:vml"
   xmlns:o="urn:schemas-microsoft-com:office:office">
   <head>
-    <!-- Specifies the document's MIME type and character encoding (UTF-8), ensuring correct display of text and special characters. -->
+    <!-- Specifies the document's MIME type and special characters (UTF-8) -->
     <meta
       http-equiv="Content-Type"
       content="text/html; charset=utf-8" />
-    <!-- Tells Internet Explorer to use its latest rendering engine, improving compatibility and display. -->
+
+    <!-- Tells Internet Explorer to use its latest rendering engine -->
     <meta
       http-equiv="X-UA-Compatible"
       content="IE=edge" />
-    <!-- Optimizes the email's layout for viewing on different devices by setting the viewport width and initial zoom level. -->
+
+    <!-- Optimizes the email's layout for viewing on different devices -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=yes" />
-    <!-- Prevents automatic detection and styling of phone numbers, dates, and other formats, allowing more control over the presentation. -->
+
+    <!-- Prevents automatic detection and styling of phone numbers, dates and more. -->
     <meta
       name="format-detection"
       content="telephone=no, date=no, address=no, email=no, url=no" />
-    <!-- Disables automatic formatting of email content by Apple Mail clients, preserving the intended design. -->
+
+    <!-- Disables automatic formatting of email content by Apple Mail clients. -->
     <meta name="x-apple-disable-message-reformatting" />
-    <!-- Indicates support for light and dark color schemes, allowing emails to adapt to user-preferred system themes. -->
+
+    <!-- Indicates support for light and dark color schemes. -->
     <meta
       name="color-scheme"
       content="light dark" />
     <meta
       name="supported-color-schemes"
       content="light dark" />
+
     <!-- Preview for Development -->
     <title>HTML Email Template Project</title>
-    <!-- Pre-establishes a connection to Google Fonts for faster font loading, improving the email's render time. -->
+
+    <!-- Google Fonts. -->
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com" />
@@ -44,6 +53,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet" />
+
     <!-- Ensures Microsoft Office clients (like Outlook) render the email at 96 pixels per inch, maintaining layout consistency across different DPI settings. -->
     <!--[if mso]>
       <noscript>
@@ -57,6 +67,7 @@
 
     <style type="text/css">
       /* <!-- --------------------------- General Styles ---------------------------- --> */
+      /* Deep Fallbacks: All these styles are placed in the <style> tags */
       table {
         border-spacing: 0;
         border-collapse: collapse;
@@ -81,6 +92,7 @@
         font-size: 16px;
       }
 
+      /* Main content Section */
       .content {
         line-height: 20px;
         font-size: 16px;
@@ -102,8 +114,8 @@
       }
 
       /* 
-      <!-- ------------------------- Dark Mode Compatibility in Gmail -------------------------- -->
-      These styles enhance text visibility in Gmail's dark mode by applying specific background colors and blend modes. They ensure the email text remains readable when users switch to dark mode in Gmail.
+      <!-- ------------------ Dark Mode Compatibility in Gmail ------------------- -->
+      These styles enhance text visibility in Gmail's dark mode. They ensure the email text remains readable when users switch to dark mode in Gmail.
       */
       u + .body .gmail-blend-screen {
         background: #000;
@@ -203,14 +215,16 @@
         }
       }
 
-      /* Dark mode */
+      /* <!-- ------------------------------ Dark mode ------------------------------ -->` */
       :root {
         color-scheme: light dark;
         supported-color-schemes: light dark;
       }
 
       @media (prefers-color-scheme: dark) {
-        /* Dark Mode Styles: Adjusts background and text for all elements to ensure compatibility and visual integrity in dark mode, specifically targeting Gmail. Utilizes [data-ogsc] as fallback for seamless color and background adaptation without conflicts by avoiding [data-ogsb] and ensuring elements such as: .darkmode-transparent maintain intended transparency. */
+        /* Dark Mode Styles: Adjusts background and text for all elements to ensure visual integrity in dark mode. 
+        
+        Utilizes [data-ogsc] as fallback for seamless color and background adaptation without conflicts by avoiding [data-ogsb]. */
 
         body,
         table,
@@ -236,27 +250,28 @@
         }
       }
 
-      /* Ensures the Lato font is loaded last to avoid being overlooked by Gmail, which can ignore @import rules with unrecognized characters. */
+      /* Ensures the Lato font is loaded last to avoid being overlooked by Gmail */
       @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
     </style>
 
-    <!-- Targets Microsoft Office clients, specifically Outlook, to ensure consistency in background color and font styling. It overrides default styles to maintain the design as intended in environments where CSS support is limited. -->
+    <!-- Ensure consistency and readability in background color and font styling. 
+    Overrides default styles to maintain the design as intended. -->
 
     <!--[if mso]>
       <style type="text/css">
         body {
-          background-color: #dde0e1 !important; /* Sets the background color for emails viewed in Outlook to a light grey, improving readability and visual comfort. */
+          background-color: #dde0e1 !important;
         }
         body,
         table,
         td,
         p,
         a {
-          font-family: 'Lato', Arial, Helvetica, sans-serif !important; /* Ensures the Lato font, or fallbacks, are used in Outlook, aligning the text appearance with other email clients. */
+          font-family: 'Lato', Arial, Helvetica, sans-serif !important;
         }
         table {
-          border-spacing: 0 !important; /* Removes spacing between cells in tables for Outlook, crucial for layout precision. */
-          border-collapse: collapse !important; /* Ensures table borders collapse into a single border or no border, crucial for clean table layouts in Outlook. */
+          border-spacing: 0 !important;
+          border-collapse: collapse !important;
         }
       </style>
     <![endif]-->
@@ -265,12 +280,12 @@
     class="body"
     xml:lang="en"
     style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1">
-    <!-- Reinforce style's of <body>, establishes email's maximum width, sets global background color, and applies base font styling for consistent appearance across email clients. -->
+    <!-- Reinforce style's of <body>, establishes general styles -->
     <div style="width: 100%; table-layout: fixed; background-color: #dde0e1; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; margin: 0 auto 40px">
-      <!-- Centers the email content within the outer container, ensuring the contained table is responsive and does not span beyond the 600px width limit. Sets the content area's background color, applies a shadow. -->
+      <!-- Centers the email content within the outer container, ensuring the contained table is responsive and does not span beyond the 600px width limit. Reinforce styles. -->
       <div style="max-width: 600px; background-color: #fafdfe; color: #3d3d3d; font-family: 'Lato', Arial, Helvetica, sans-serif; font-size: 16px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin: 0 auto">
         <!-- ------------------------------ Preheader ------------------------------ -->
-        <!-- Styles to hide it from normal view -->
+        <!-- Styles to hide Preheader from normal view -->
         <div style="font-size: 0px; color: #fafdfe; mso-line-height-rule: exactly; line-height: 0px; display: none; max-width: 0px; max-height: 0px; opacity: 0; overflow: hidden; mso-hide: all">
           <!-- ----------------- Preheader Text (85-100 characters) ------------------ -->
           This is our preheader text which can be 35-190 characters but 85-100 is recommended.
